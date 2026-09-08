@@ -28,6 +28,9 @@ app.use('/api/academic', academicRoutes);
 app.use('/api/students/bulk-upload', bulkUploadRoutes);
 app.use('/api/students', studentRoutes);
 app.use('/api/dashboard', dashboardRoutes);
+
+const facultyRoutes = require('./routes/facultyRoutes');
+app.use('/api/faculty', facultyRoutes);
 // 404 handler
 app.use((req, res, next) => {
   res.status(404).json({ message: 'Route not found' });

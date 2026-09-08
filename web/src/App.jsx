@@ -16,6 +16,8 @@ import TeachingPlan from './pages/timetable/TeachingPlan';
 import Availability from './pages/timetable/Availability';
 import GenerateTimetable from './pages/timetable/GenerateTimetable';
 import Timetables from './pages/timetable/Timetables';
+import FacultyManagement from './pages/faculty/FacultyManagement';
+import FacultyDetails from './pages/faculty/FacultyDetails';
 import { getNavigationLinks } from './config/navigation';
 import './index.css';
 
@@ -59,7 +61,8 @@ function App() {
           <Route path="/attendance/dashboard" element={<ProtectedRoute allowedRoles={['HOD', 'Faculty', 'Student']}><DashboardRouter /></ProtectedRoute>} />
           <Route path="/attendance/academics" element={<ProtectedRoute allowedRoles={['HOD']}><AcademicStructure /></ProtectedRoute>} />
           <Route path="/attendance/students" element={<ProtectedRoute allowedRoles={['HOD']}><StudentManagement /></ProtectedRoute>} />
-          <Route path="/attendance/faculty" element={<ProtectedRoute allowedRoles={['HOD']}><NotImplemented /></ProtectedRoute>} />
+          <Route path="/attendance/faculty" element={<ProtectedRoute allowedRoles={['HOD']}><FacultyManagement /></ProtectedRoute>} />
+          <Route path="/attendance/faculty/:id" element={<ProtectedRoute allowedRoles={['HOD']}><FacultyDetails /></ProtectedRoute>} />
           <Route path="/attendance/my-schedule" element={<ProtectedRoute allowedRoles={['HOD', 'Faculty', 'Student']}><NotImplemented /></ProtectedRoute>} />
           <Route path="/attendance/monitor" element={<ProtectedRoute allowedRoles={['HOD', 'Faculty']}><NotImplemented /></ProtectedRoute>} />
           <Route path="/attendance/my-attendance" element={<ProtectedRoute allowedRoles={['Student']}><NotImplemented /></ProtectedRoute>} />
